@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual (.)
+    build: .
+    # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no contêiner para que as alterações no código
+    # sejam refletidas em tempo real (hot-reloading) e para persistir o banco de dados.
+    volumes:
+      - .:/app
+      
